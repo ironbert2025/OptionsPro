@@ -8,4 +8,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Options.Application\Options.Application.csproj" />
+    <ProjectReference Include="..\Options.Infrastructure\Options.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
