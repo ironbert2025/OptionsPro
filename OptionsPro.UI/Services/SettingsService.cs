@@ -37,5 +37,18 @@ namespace Options.Application.Services
 
             Settings.Default.Save();
         }
+
+        //Position Size
+        public double GetPositionSize()
+        {
+            return Settings.Default.PositionSize;
+        }
+
+        public void SavePositionSize(double value)
+        {
+            Settings.Default.PositionSize = value;
+
+            Settings.Default.Save();
+        }
     }
 }

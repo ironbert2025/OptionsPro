@@ -46,5 +46,17 @@ namespace OptionsPro.UI.Properties {
                 this["SelectedBroker"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PositionSize {
+            get {
+                return ((double)(this["PositionSize"]));
+            }
+            set {
+                this["PositionSize"] = value;
+            }
+        }
     }
 }

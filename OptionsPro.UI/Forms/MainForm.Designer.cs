@@ -40,13 +40,13 @@ namespace OptionsPro.UI
             radioButton5 = new RadioButton();
             radioButton6 = new RadioButton();
             groupBox3 = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
+            rbTargetPercent100 = new RadioButton();
+            rbTargetPercent35 = new RadioButton();
+            rbTargetPercent10 = new RadioButton();
             groupBox2 = new GroupBox();
-            rbPositionSize3 = new RadioButton();
-            rbPositionSize2 = new RadioButton();
-            rbPositionSize1 = new RadioButton();
+            rbPositionSize10 = new RadioButton();
+            rbPositionSize5 = new RadioButton();
+            rbPositionSize25 = new RadioButton();
             groupBox1 = new GroupBox();
             label1 = new Label();
             btnSaveMarkets = new Button();
@@ -175,9 +175,9 @@ namespace OptionsPro.UI
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(radioButton1);
-            groupBox3.Controls.Add(radioButton2);
-            groupBox3.Controls.Add(radioButton3);
+            groupBox3.Controls.Add(rbTargetPercent100);
+            groupBox3.Controls.Add(rbTargetPercent35);
+            groupBox3.Controls.Add(rbTargetPercent10);
             groupBox3.Location = new Point(611, 19);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(108, 222);
@@ -185,44 +185,44 @@ namespace OptionsPro.UI
             groupBox3.TabStop = false;
             groupBox3.Text = "Target (%)";
             // 
-            // radioButton1
+            // rbTargetPercent100
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(19, 75);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(43, 19);
-            radioButton1.TabIndex = 2;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "100";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbTargetPercent100.AutoSize = true;
+            rbTargetPercent100.Location = new Point(19, 75);
+            rbTargetPercent100.Name = "rbTargetPercent100";
+            rbTargetPercent100.Size = new Size(43, 19);
+            rbTargetPercent100.TabIndex = 2;
+            rbTargetPercent100.TabStop = true;
+            rbTargetPercent100.Text = "100";
+            rbTargetPercent100.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbTargetPercent35
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(19, 50);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(37, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "35";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbTargetPercent35.AutoSize = true;
+            rbTargetPercent35.Location = new Point(19, 50);
+            rbTargetPercent35.Name = "rbTargetPercent35";
+            rbTargetPercent35.Size = new Size(37, 19);
+            rbTargetPercent35.TabIndex = 1;
+            rbTargetPercent35.TabStop = true;
+            rbTargetPercent35.Text = "35";
+            rbTargetPercent35.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbTargetPercent10
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(19, 25);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(37, 19);
-            radioButton3.TabIndex = 0;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "10";
-            radioButton3.UseVisualStyleBackColor = true;
+            rbTargetPercent10.AutoSize = true;
+            rbTargetPercent10.Location = new Point(19, 25);
+            rbTargetPercent10.Name = "rbTargetPercent10";
+            rbTargetPercent10.Size = new Size(37, 19);
+            rbTargetPercent10.TabIndex = 0;
+            rbTargetPercent10.TabStop = true;
+            rbTargetPercent10.Text = "10";
+            rbTargetPercent10.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(rbPositionSize3);
-            groupBox2.Controls.Add(rbPositionSize2);
-            groupBox2.Controls.Add(rbPositionSize1);
+            groupBox2.Controls.Add(rbPositionSize10);
+            groupBox2.Controls.Add(rbPositionSize5);
+            groupBox2.Controls.Add(rbPositionSize25);
             groupBox2.Location = new Point(478, 19);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(108, 222);
@@ -230,38 +230,38 @@ namespace OptionsPro.UI
             groupBox2.TabStop = false;
             groupBox2.Text = "Position Size (%)";
             // 
-            // rbPositionSize3
+            // rbPositionSize10
             // 
-            rbPositionSize3.AutoSize = true;
-            rbPositionSize3.Location = new Point(19, 75);
-            rbPositionSize3.Name = "rbPositionSize3";
-            rbPositionSize3.Size = new Size(37, 19);
-            rbPositionSize3.TabIndex = 2;
-            rbPositionSize3.TabStop = true;
-            rbPositionSize3.Text = "10";
-            rbPositionSize3.UseVisualStyleBackColor = true;
+            rbPositionSize10.AutoSize = true;
+            rbPositionSize10.Location = new Point(19, 75);
+            rbPositionSize10.Name = "rbPositionSize10";
+            rbPositionSize10.Size = new Size(37, 19);
+            rbPositionSize10.TabIndex = 2;
+            rbPositionSize10.TabStop = true;
+            rbPositionSize10.Text = "10";
+            rbPositionSize10.UseVisualStyleBackColor = true;
             // 
-            // rbPositionSize2
+            // rbPositionSize5
             // 
-            rbPositionSize2.AutoSize = true;
-            rbPositionSize2.Location = new Point(19, 50);
-            rbPositionSize2.Name = "rbPositionSize2";
-            rbPositionSize2.Size = new Size(31, 19);
-            rbPositionSize2.TabIndex = 1;
-            rbPositionSize2.TabStop = true;
-            rbPositionSize2.Text = "5";
-            rbPositionSize2.UseVisualStyleBackColor = true;
+            rbPositionSize5.AutoSize = true;
+            rbPositionSize5.Location = new Point(19, 50);
+            rbPositionSize5.Name = "rbPositionSize5";
+            rbPositionSize5.Size = new Size(31, 19);
+            rbPositionSize5.TabIndex = 1;
+            rbPositionSize5.TabStop = true;
+            rbPositionSize5.Text = "5";
+            rbPositionSize5.UseVisualStyleBackColor = true;
             // 
-            // rbPositionSize1
+            // rbPositionSize25
             // 
-            rbPositionSize1.AutoSize = true;
-            rbPositionSize1.Location = new Point(19, 25);
-            rbPositionSize1.Name = "rbPositionSize1";
-            rbPositionSize1.Size = new Size(40, 19);
-            rbPositionSize1.TabIndex = 0;
-            rbPositionSize1.TabStop = true;
-            rbPositionSize1.Text = "2.5";
-            rbPositionSize1.UseVisualStyleBackColor = true;
+            rbPositionSize25.AutoSize = true;
+            rbPositionSize25.Location = new Point(19, 25);
+            rbPositionSize25.Name = "rbPositionSize25";
+            rbPositionSize25.Size = new Size(40, 19);
+            rbPositionSize25.TabIndex = 0;
+            rbPositionSize25.TabStop = true;
+            rbPositionSize25.Text = "2.5";
+            rbPositionSize25.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -377,7 +377,7 @@ namespace OptionsPro.UI
             ResumeLayout(false);
         }
 
-        
+
 
         #endregion
 
@@ -392,13 +392,13 @@ namespace OptionsPro.UI
         private RadioButton radioButton5;
         private RadioButton radioButton6;
         private GroupBox groupBox3;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
+        private RadioButton rbTargetPercent100;
+        private RadioButton rbTargetPercent35;
+        private RadioButton rbTargetPercent10;
         private GroupBox groupBox2;
-        private RadioButton rbPositionSize3;
-        private RadioButton rbPositionSize2;
-        private RadioButton rbPositionSize1;
+        private RadioButton rbPositionSize10;
+        private RadioButton rbPositionSize5;
+        private RadioButton rbPositionSize25;
         private GroupBox groupBox1;
         private Label label1;
         private Button btnSaveMarkets;
