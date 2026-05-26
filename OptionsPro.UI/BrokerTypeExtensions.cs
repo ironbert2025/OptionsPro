@@ -13,11 +13,11 @@ namespace OptionsPro.UI
         {
             switch (broker)
             {
-                case BrokerType.CharlesSchwab:
-                    return "Charles Schwab";
+                //case BrokerType.CharlesSchwab:
+                //    return "Charles Schwab";
 
-                case BrokerType.InteractiveBroker:
-                    return "Interactive Broker";
+                //case BrokerType.InteractiveBroker:
+                //    return "Interactive Broker";
 
                 case BrokerType.ETrade:
                     return "E-Trade";

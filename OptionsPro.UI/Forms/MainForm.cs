@@ -16,7 +16,12 @@ namespace OptionsPro.UI
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadBroker();
-            
+
+            LoadPositionPercent();
+
+            LoadTargetPercent();
+
+
         }
         private void RegisterEvents()
         {
@@ -39,7 +44,7 @@ namespace OptionsPro.UI
                 DrawGreenControl(ref rb);
 
                 double positionSize = Convert.ToDouble (rb.Text);
-                _settingsService.SavePositionSize(positionSize);
+                _settingsService.SavePositionPercent(positionSize);
 
                 return;
             }
@@ -85,8 +90,44 @@ namespace OptionsPro.UI
                     break;
             }
         }
-        
-        
+
+        private void LoadPositionPercent()
+        {
+            double positionSize = _settingsService.GetPositionPercent();
+
+            switch (positionSize)
+            {
+                case 2.5:
+                    rbPositionSize25.Checked = true;
+                    break;
+                case 5:
+                    rbPositionSize5.Checked = true;
+                    break;
+                case 10:
+                    rbPositionSize10.Checked = true;
+                    break;
+            }
+        }
+
+        private void LoadTargetPercent()
+        {
+            double targetPercent = _settingsService.GetTargetPercent();
+
+            switch (targetPercent)
+            {
+                case 10:
+                    rbTargetPercent10.Checked = true;
+                    break;
+                case 35:
+                    rbTargetPercent35.Checked = true;
+                    break;
+                case 100:
+                    rbTargetPercent100.Checked = true;
+                    break;
+            }
+        }
+
+
         private void rbBroker_CheckedChanged(object sender, EventArgs e)
         {
 

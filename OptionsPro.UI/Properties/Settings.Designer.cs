@@ -50,12 +50,12 @@ namespace OptionsPro.UI.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double PositionSize {
+        public double PositionPercent {
             get {
-                return ((double)(this["PositionSize"]));
+                return ((double)(this["PositionPercent"]));
             }
             set {
-                this["PositionSize"] = value;
+                this["PositionPercent"] = value;
             }
         }
     }

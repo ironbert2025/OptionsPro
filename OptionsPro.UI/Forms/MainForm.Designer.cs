@@ -320,10 +320,10 @@ namespace OptionsPro.UI
             rbETrade.AutoSize = true;
             rbETrade.Location = new Point(19, 75);
             rbETrade.Name = "rbETrade";
-            rbETrade.Size = new Size(65, 19);
+            rbETrade.Size = new Size(60, 19);
             rbETrade.TabIndex = 2;
             rbETrade.TabStop = true;
-            rbETrade.Text = "E-Trade";
+            rbETrade.Text = "ETrade";
             rbETrade.UseVisualStyleBackColor = true;
             rbETrade.CheckedChanged += rbBroker_CheckedChanged;
             // 
@@ -332,10 +332,10 @@ namespace OptionsPro.UI
             rbIBKR.AutoSize = true;
             rbIBKR.Location = new Point(19, 50);
             rbIBKR.Name = "rbIBKR";
-            rbIBKR.Size = new Size(117, 19);
+            rbIBKR.Size = new Size(49, 19);
             rbIBKR.TabIndex = 1;
             rbIBKR.TabStop = true;
-            rbIBKR.Text = "Interactive Broker";
+            rbIBKR.Text = "IBKR";
             rbIBKR.UseVisualStyleBackColor = true;
             rbIBKR.CheckedChanged += rbBroker_CheckedChanged;
             // 
@@ -344,10 +344,10 @@ namespace OptionsPro.UI
             rbSchwab.AutoSize = true;
             rbSchwab.Location = new Point(19, 25);
             rbSchwab.Name = "rbSchwab";
-            rbSchwab.Size = new Size(108, 19);
+            rbSchwab.Size = new Size(66, 19);
             rbSchwab.TabIndex = 0;
             rbSchwab.TabStop = true;
-            rbSchwab.Text = "Charles Schwab";
+            rbSchwab.Text = "Schwab";
             rbSchwab.UseVisualStyleBackColor = true;
             rbSchwab.CheckedChanged += rbBroker_CheckedChanged;
             // 

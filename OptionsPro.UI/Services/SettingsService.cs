@@ -39,14 +39,14 @@ namespace Options.Application.Services
         }
 
         //Position Size
-        public double GetPositionSize()
+        public double GetPositionPercent()
         {
-            return Settings.Default.PositionSize;
+            return Settings.Default.PositionPercent;
         }
 
-        public void SavePositionSize(double value)
+        public void SavePositionPercent(double value)
         {
-            Settings.Default.PositionSize = value;
+            Settings.Default.PositionPercent = value;
 
             Settings.Default.Save();
         }

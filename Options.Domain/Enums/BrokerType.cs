@@ -8,8 +8,8 @@ namespace Options.Domain.Enums
 {
     public enum BrokerType
     {
-        CharlesSchwab,
-        InteractiveBroker,
+        Schwab,
+        IBKR,
         ETrade
     }
 }
