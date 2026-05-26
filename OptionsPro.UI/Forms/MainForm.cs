@@ -1,4 +1,5 @@
 using Options.Application.Services;
+using Options.Domain.Enums;
 
 namespace OptionsPro.UI
 {
@@ -43,7 +44,7 @@ namespace OptionsPro.UI
             {
                 DrawGreenControl(ref rb);
 
-                double positionSize = Convert.ToDouble (rb.Text);
+                string positionSize = rb.Text;
                 _settingsService.SavePositionPercent(positionSize);
 
                 return;
@@ -63,7 +64,7 @@ namespace OptionsPro.UI
 
                 DrawGreenControl(ref rb);
 
-                int targetPercent = Convert.ToInt32(rb.Text);
+                string targetPercent = rb.Text;
                 _settingsService.SaveTargetPercent(targetPercent);
 
                 return;
@@ -73,19 +74,21 @@ namespace OptionsPro.UI
         }
         private void LoadBroker()
         {
-            string broker = _settingsService.GetBroker();
+            string brokerText = _settingsService.GetBroker();
+
+            BrokerType broker =    Enum.Parse<BrokerType>(brokerText);
 
             switch (broker)
             {
-                case "Schwab":
+                case BrokerType.Schwab:
                     rbSchwab.Checked = true;
                     break;
 
-                case "IBKR":
+                case BrokerType.IBKR:
                     rbIBKR.Checked = true;
                     break;
 
-                case "ETrade":
+                case BrokerType.ETrade:
                     rbETrade.Checked = true;
                     break;
             }
@@ -93,17 +96,17 @@ namespace OptionsPro.UI
 
         private void LoadPositionPercent()
         {
-            double positionSize = _settingsService.GetPositionPercent();
+            string positionSize = _settingsService.GetPositionPercent();         
 
             switch (positionSize)
             {
-                case 2.5:
+                case"2.5":
                     rbPositionSize25.Checked = true;
                     break;
-                case 5:
+                case "5":
                     rbPositionSize5.Checked = true;
                     break;
-                case 10:
+                case "10":
                     rbPositionSize10.Checked = true;
                     break;
             }
@@ -111,17 +114,19 @@ namespace OptionsPro.UI
 
         private void LoadTargetPercent()
         {
-            double targetPercent = _settingsService.GetTargetPercent();
+            string targetPercentString = _settingsService.GetTargetPercent();
+
+            TargetPercent targetPercent = Enum.Parse<TargetPercent>(targetPercentString);
 
             switch (targetPercent)
             {
-                case 10:
+                case TargetPercent.Ten:
                     rbTargetPercent10.Checked = true;
                     break;
-                case 35:
+                case TargetPercent.ThirtyFive:
                     rbTargetPercent35.Checked = true;
                     break;
-                case 100:
+                case TargetPercent.Hundred:
                     rbTargetPercent100.Checked = true;
                     break;
             }

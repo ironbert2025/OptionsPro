@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Options.Application\Options.Application.csproj" />
+    <ProjectReference Include="..\Options.Domain\Options.Domain.csproj" />
     <ProjectReference Include="..\Options.Infrastructure\Options.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -8,7 +8,7 @@ namespace Options.Domain.Enums
 {
     public enum PositionSize
     {
-        Two = 2,
+        TwoPointFive = 25,
         Five = 5,
         Ten = 10
     }

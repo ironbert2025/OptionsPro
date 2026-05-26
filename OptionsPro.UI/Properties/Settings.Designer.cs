@@ -26,9 +26,9 @@ namespace OptionsPro.UI.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int TargetPercent {
+        public string TargetPercent {
             get {
-                return ((int)(this["TargetPercent"]));
+                return ((string)(this["TargetPercent"]));
             }
             set {
                 this["TargetPercent"] = value;
@@ -50,9 +50,9 @@ namespace OptionsPro.UI.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double PositionPercent {
+        public string PositionPercent {
             get {
-                return ((double)(this["PositionPercent"]));
+                return ((string)(this["PositionPercent"]));
             }
             set {
                 this["PositionPercent"] = value;

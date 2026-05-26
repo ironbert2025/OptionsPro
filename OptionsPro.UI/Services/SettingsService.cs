@@ -26,12 +26,12 @@ namespace Options.Application.Services
         }
 
         //TargetPercent
-        public int GetTargetPercent()
+        public string GetTargetPercent()
         {
             return Settings.Default.TargetPercent;
         }
 
-        public void SaveTargetPercent(int value)
+        public void SaveTargetPercent(string value)
         {
             Settings.Default.TargetPercent = value;
 
@@ -39,12 +39,12 @@ namespace Options.Application.Services
         }
 
         //Position Size
-        public double GetPositionPercent()
+        public string GetPositionPercent()
         {
             return Settings.Default.PositionPercent;
         }
 
-        public void SavePositionPercent(double value)
+        public void SavePositionPercent(string value)
         {
             Settings.Default.PositionPercent = value;
 
