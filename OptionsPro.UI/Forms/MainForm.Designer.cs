@@ -55,6 +55,10 @@ namespace OptionsPro.UI
             rbETrade = new RadioButton();
             rbIBKR = new RadioButton();
             rbSchwab = new RadioButton();
+            Symbol = new DataGridViewTextBoxColumn();
+            LowValue = new DataGridViewTextBoxColumn();
+            HighValue = new DataGridViewTextBoxColumn();
+            ExpDate = new DataGridViewTextBoxColumn();
             tabMainTab.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -294,13 +298,16 @@ namespace OptionsPro.UI
             btnSaveMarkets.TabIndex = 1;
             btnSaveMarkets.Text = "Save";
             btnSaveMarkets.UseVisualStyleBackColor = true;
+            btnSaveMarkets.Click += btnSaveMarkets_Click;
             // 
             // dgvMarkets
             // 
             dgvMarkets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMarkets.Columns.AddRange(new DataGridViewColumn[] { Symbol, LowValue, HighValue, ExpDate });
             dgvMarkets.Location = new Point(6, 25);
             dgvMarkets.Name = "dgvMarkets";
-            dgvMarkets.Size = new Size(234, 134);
+            dgvMarkets.RowHeadersVisible = false;
+            dgvMarkets.Size = new Size(248, 134);
             dgvMarkets.TabIndex = 0;
             // 
             // gbBrokers
@@ -350,6 +357,30 @@ namespace OptionsPro.UI
             rbSchwab.Text = "Schwab";
             rbSchwab.UseVisualStyleBackColor = true;
             rbSchwab.CheckedChanged += rbBroker_CheckedChanged;
+            // 
+            // Symbol
+            // 
+            Symbol.HeaderText = "Symbol";
+            Symbol.Name = "Symbol";
+            Symbol.Width = 50;
+            // 
+            // LowValue
+            // 
+            LowValue.HeaderText = "LowValue";
+            LowValue.Name = "LowValue";
+            LowValue.Width = 50;
+            // 
+            // HighValue
+            // 
+            HighValue.HeaderText = "HighValue";
+            HighValue.Name = "HighValue";
+            HighValue.Width = 65;
+            // 
+            // ExpDate
+            // 
+            ExpDate.HeaderText = "ExpDate";
+            ExpDate.Name = "ExpDate";
+            ExpDate.Width = 50;
             // 
             // MainForm
             // 
@@ -407,5 +438,9 @@ namespace OptionsPro.UI
         private RadioButton rbETrade;
         private RadioButton rbIBKR;
         private RadioButton rbSchwab;
+        private DataGridViewTextBoxColumn Symbol;
+        private DataGridViewTextBoxColumn LowValue;
+        private DataGridViewTextBoxColumn HighValue;
+        private DataGridViewTextBoxColumn ExpDate;
     }
 }

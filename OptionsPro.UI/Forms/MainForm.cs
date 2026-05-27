@@ -1,22 +1,28 @@
 using Options.Application.Services;
+using Options.Domain.Entities;
 using Options.Domain.Enums;
+using Options.Infrastructure.Services;
 
 namespace OptionsPro.UI
 {
     public partial class MainForm : Form
     {
         private readonly SettingsService _settingsService;
+        private readonly WatchlistStorageService _watchlistService;
         public MainForm()
         {
             InitializeComponent();
 
             _settingsService = new SettingsService();
+            _watchlistService = new WatchlistStorageService();
 
             RegisterEvents();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadBroker();
+
+            LoadGridMarkets();
 
             LoadPositionPercent();
 
@@ -76,7 +82,7 @@ namespace OptionsPro.UI
         {
             string brokerText = _settingsService.GetBroker();
 
-            BrokerType broker =    Enum.Parse<BrokerType>(brokerText);
+            BrokerType broker = Enum.Parse<BrokerType>(brokerText);
 
             switch (broker)
             {
@@ -96,11 +102,11 @@ namespace OptionsPro.UI
 
         private void LoadPositionPercent()
         {
-            string positionSize = _settingsService.GetPositionPercent();         
+            string positionSize = _settingsService.GetPositionPercent();
 
             switch (positionSize)
             {
-                case"2.5":
+                case "2.5":
                     rbPositionSize25.Checked = true;
                     break;
                 case "5":
@@ -137,14 +143,14 @@ namespace OptionsPro.UI
         {
 
             RadioButton rb = (RadioButton)sender;
-            
+
 
             if (rb.Checked)
             {
                 DrawGreenControl(ref rb);
 
                 string broker = rb.Text;
-                _settingsService.SaveBroker(broker);               
+                _settingsService.SaveBroker(broker);
 
                 return;
             }
@@ -162,6 +168,69 @@ namespace OptionsPro.UI
         {
             rb.Font = new Font(rb.Font.FontFamily, 9f, FontStyle.Regular);
             rb.ForeColor = SystemColors.ControlText;
+        }
+
+        private void btnSaveMarkets_Click(object sender, EventArgs e)
+        {
+            SaveGridMarkets();
+        }
+        private void SaveGridMarkets()
+        {
+            List<WatchItem> items =
+                new List<WatchItem>();
+
+            foreach (DataGridViewRow row in dgvMarkets.Rows)
+            {
+                if (row.IsNewRow)
+                    continue;
+
+                WatchItem item =
+                    new WatchItem
+                    {
+                        Symbol =  row.Cells["Symbol"].Value?.ToString(),
+
+                        LowValue = Convert.ToDouble(row.Cells["LowValue"].Value),
+
+                        HighValue =Convert.ToDouble(row.Cells["HighValue"].Value),
+
+                        ExpDate =row.Cells["ExpDate"].Value?.ToString()
+                    };
+
+                items.Add(item);
+            }
+
+            _watchlistService.Save(items);
+        }
+        private void LoadGridMarkets()
+        {
+            List<WatchItem> items = _watchlistService.Load();
+
+            dgvMarkets.Rows.Clear();
+
+            if (items.Count == 0)
+            {
+                // Crear 4 filas vacías
+                for (int i = 0; i < 4; i++)
+                {
+                    dgvMarkets.Rows.Add(
+                        "",
+                        "",
+                        "",
+                        "");
+                }
+
+                return;
+            }
+
+
+            foreach (WatchItem item in items)
+            {
+                dgvMarkets.Rows.Add(
+                    item.Symbol,
+                    item.LowValue,
+                    item.HighValue,
+                    item.ExpDate);
+            }
         }
     }
 }
